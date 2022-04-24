@@ -6,3 +6,7 @@ export const router = Router();
 
 // verificar o cpf (pix key quando passar pelo body da requesição)
 router.post("/payload/create", createPayload);
+
+router.get("/", (req, res) => {
+  res.send("hello");
+});
