@@ -1,4 +1,4 @@
-import { Payload } from "src/entities/Payload";
+import { Payload } from "../entities/Payload";
 
 export const createPayload = (req: any, res: any) => {
   let pixkey = req.body.pixkey;
