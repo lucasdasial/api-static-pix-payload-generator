@@ -28,6 +28,6 @@ export const createPayload = (req: any, res: any) => {
         "Undefined, the key that defines the transaction amount must be 'amount'",
     });
   } else {
-    res.status(201).send(pix.getPayload());
+    res.status(201).json({ message: "success", payload: pix.getPayload() });
   }
 };
