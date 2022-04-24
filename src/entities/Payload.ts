@@ -1,14 +1,13 @@
-import { uuid } from "uuidv4";
+import { v4 } from "uuid";
 
 export class Payload {
   constructor(
     private _pixKey: string,
-    private _description: string,
     private _merchantName: string,
     private _merchantCity: string,
     private _amount: number
   ) {}
-  private _txid = uuid();
+  private _txid = v4();
   private ID_PAYLOAD_FORMAT_INDICATOR = "00";
   private ID_MERCHANT_ACCOUNT_INFORMATION = "26";
   private ID_MERCHANT_ACCOUNT_INFORMATION_GUI = "00";
@@ -26,10 +25,6 @@ export class Payload {
 
   public get pixKey(): string {
     return this._pixKey;
-  }
-
-  public get description(): string {
-    return this._description;
   }
 
   public get merchantName(): string {
@@ -65,10 +60,6 @@ export class Payload {
       this.ID_MERCHANT_ACCOUNT_INFORMATION_KEY,
       this.pixKey
     );
-    const descrip = this.getValue(
-      this.ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION,
-      this._description
-    );
 
     return this.getValue(this.ID_MERCHANT_ACCOUNT_INFORMATION, gui + key);
   }
@@ -82,7 +73,6 @@ export class Payload {
   }
 
   public getPayload() {
-    console.log(this.getValue(this.ID_TRANSACTION_AMOUNT, this._amount));
     const payload =
       this.getValue(this.ID_PAYLOAD_FORMAT_INDICATOR, "01") +
       this.getMechantAccountInfo() +
