@@ -1,0 +1,74 @@
+{
+    "openapi":"3.0.0",
+    "info":{
+        "title": "static pix payload generator",
+        "description": "gerador do payload nescessario para gerar o qrcode para seu pix",
+        "termsOfService": "",
+        "contact":{
+            "url":  "https://github.com/luccasalves/static-pix-payload-generator"
+        },
+        "version": "1.0.0"  
+    },
+    "servers": [
+        {
+          "url": "https://development.gigantic-server.com/v1",
+          "description": "Development server"
+        },
+        {
+          "url": "https://api.gigantic-server.com/v1",
+          "description": "Production server"
+        }
+      ],
+      "paths":{
+          "/payload/create":{
+              "post":{
+                  "summary": "Gerar o payload",
+                  "description": "Criara o payload com base nas informações recebidas",
+                  "tags":["payload"],
+                  "requestBody":{
+                      "content":{
+                          "application/json":{
+                              "schema":{
+                                "$ref":"#/components/schemas/Payload"
+                              },
+                            "examples":{
+                                "payload":{
+                                    "value":{
+                                        "pixkey": "+5591993964013",
+                                        "name": "Fulano",
+                                        "city": "BELEM",
+                                        "amount": 10
+
+                                    }
+                                }
+                            }
+                          }
+                      }
+                  }
+                
+              }
+          }
+      },
+      "components":{
+          "schemas":{
+              "Payload":{
+                  "type": "object",
+                  "properties":{
+                      "pixkey":{
+                          "type": "string"
+                      },
+                      "name":{
+                          "type": "string"
+                      },
+                      "city":{
+                          "type": "string"
+                      },
+                      "amount":{
+                          "type": "number"
+                      }
+                  }
+              }
+          }
+      }
+   
+}
