@@ -11,13 +11,10 @@
     },
     "servers": [
         {
-          "url": "https://development.gigantic-server.com/v1",
+          "url": "https://api-static-pix-payload.herokuapp.com/",
           "description": "Development server"
-        },
-        {
-          "url": "https://api.gigantic-server.com/v1",
-          "description": "Production server"
         }
+      
       ],
       "paths":{
           "/payload/create":{

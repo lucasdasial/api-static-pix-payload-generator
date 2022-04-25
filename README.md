@@ -16,6 +16,10 @@ Api gera o payload nos conformes estabelecidos pelo [bancen](https://github.com/
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"style="width:32px" />
 </div>
 
+### url da api
+
+https://api-static-pix-payload.herokuapp.com/
+
 ### Rotas
 
 - /doc - acessa a documentação
@@ -24,15 +28,21 @@ Api gera o payload nos conformes estabelecidos pelo [bancen](https://github.com/
 <hr/>
 
 ### Caso queira rodar na sua máquina
+
 Inicia o servidor de desenvolvimento
+
 ```bash
 yarn dev
 ```
+
 Compila o codigo, gerando os arquivos para produção
+
 ```bash
 yarn build
 ```
+
 Inicia o servidor com os arquivos de produção
+
 ```bash
 yarn start
 ```
